@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ʻEmalani Hula Designs - フラダンス衣装＆スクール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* カスタムスタイル */
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F8F5F2; /* ナチュラルなオフホワイト */
+            color: #4A4A4A; /* ややソフトなブラック */
+        }
+        h1, h2, h3, h4, h5, h6, .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        .carousel-item {
+            display: none;
+            transition: opacity 1s ease-in-out;
+        }
+        .carousel-item.active {
+            display: block;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* ボタニカルパターン背景 */
+        .bg-botanical-pattern {
+            background-color: #F8F5F2;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23d3c7b9' fill-opacity='0.15'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0h1v5h5v1H6v94h94V6h-94v1h94V1H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-[#F8F5F2]">
+
+    <!-- ヘッダー -->
+    <header id="header" class="bg-[#F8F5F2]/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold text-[#5C6B5C]">ʻEmalani Hula Designs</a>
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="#store" class="text-gray-600 hover:text-[#D98C8C] transition-colors">Online Store</a>
+                <a href="#ordermade" class="text-gray-600 hover:text-[#D98C8C] transition-colors">Order Made</a>
+                <a href="#school" class="text-gray-600 hover:text-[#D98C8C] transition-colors">Our School</a>
+                <a href="#news" class="text-gray-600 hover:text-[#D98C8C] transition-colors">News</a>
+                <a href="#contact" class="text-gray-600 hover:text-[#D98C8C] transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-600 hover:text-[#D98C8C] transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </a>
+                <button id="mobile-menu-button" class="lg:hidden text-gray-600 focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="hidden lg:hidden px-6 pb-4">
+            <a href="#store" class="block py-2 text-gray-600 hover:text-[#D98C8C]">Online Store</a>
+            <a href="#ordermade" class="block py-2 text-gray-600 hover:text-[#D98C8C]">Order Made</a>
+            <a href="#school" class="block py-2 text-gray-600 hover:text-[#D98C8C]">Our School</a>
+            <a href="#news" class="block py-2 text-gray-600 hover:text-[#D98C8C]">News</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-[#D98C8C]">Contact</a>
+        </div>
+    </header>
+
+    <!-- メインビジュアル (カルーセル) -->
+    <main>
+        <section class="relative w-full h-[60vh] md:h-[85vh] overflow-hidden">
+            <div id="carousel" class="w-full h-full">
+                <!-- Slide 1: イベント情報 -->
+                <div class="carousel-item active w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723a996f6ea?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="w-full h-full bg-black bg-opacity-30 flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Ho'ike - 発表会開催</h2>
+                            <p class="mb-6 text-lg">11月2日、文化ホールにて。心を込めた踊りを披露します。</p>
+                            <a href="#" class="bg-white text-[#5C6B5C] font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-all">詳しくはこちら</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2: セール情報 -->
+                <div class="carousel-item w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519046904884-53103b34b206?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="w-full h-full bg-black bg-opacity-30 flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">Summer Aloha Sale</h2>
+                            <p class="mb-6 text-lg">オンラインストア限定。人気のパウスカートが15% OFF。</p>
+                            <a href="#store" class="bg-[#D98C8C] text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-80 transition-all">ストアを見る</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3: 教室の紹介 -->
+                <div class="carousel-item w-full h-full bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1541654218202-73c885149152?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+                    <div class="w-full h-full bg-black bg-opacity-30 flex items-center justify-center">
+                        <div class="text-center text-white p-8">
+                            <h2 class="font-display text-4xl md:text-6xl font-bold mb-4">フラを、もっと好きになる場所。</h2>
+                            <p class="mb-6 text-lg">Nāmea Hula o ʻEmalani - 体験レッスン受付中</p>
+                            <a href="#school" class="bg-white text-[#5C6B5C] font-bold py-3 px-8 rounded-full hover:bg-gray-200 transition-all">教室について</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- カルーセルナビゲーション -->
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex space-x-2" id="carousel-dots"></div>
+        </section>
+
+        <!-- コンセプト -->
+        <section class="py-20 bg-[#F8F5F2] relative overflow-hidden">
+             <!-- 背景の装飾イラスト -->
+            <div class="absolute -top-20 -left-20 opacity-10">
+                <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="%235C6B5C" d="M39.3,-51.8C52.3,-47.1,65.2,-36.8,71.1,-23.5C77,-10.2,75.9,6.1,69.5,19.5C63.1,32.9,51.4,43.4,38.8,51.4C26.2,59.3,13.1,64.7,-1.2,66.1C-15.5,67.5,-31,64.9,-43.3,57.2C-55.6,49.5,-64.7,36.7,-69.5,22.6C-74.3,8.5,-74.8,-6.9,-69.4,-20.5C-64,-34.1,-52.7,-45.9,-39.8,-50.9C-26.9,-55.9,-13.4,-54.1,-0.8,-53.1C11.8,-52.1,23.5,-56.4,39.3,-51.8Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 text-center max-w-3xl fade-in relative z-10">
+                <h2 class="font-display text-4xl text-[#5C6B5C] mb-6">A Dress that Dances with the Wind.</h2>
+                <p class="text-lg leading-relaxed mb-4">風と踊る、一着を。</p>
+                <p class="leading-loose text-gray-600">
+                    ハワイの豊かな自然からインスピレーションを受け、<br>
+                    上質な素材と丁寧な手仕事で、あなただけの一着を仕立てます。<br>
+                    踊るたびに心も華やぐ、そんなフラ衣装をお届けします。
+                </p>
+                 <!-- 波線の区切り -->
+                <div class="w-32 h-auto mx-auto mt-8">
+                    <svg viewBox="0 0 100 12" xmlns="http://www.w3.org/2000/svg" class="stroke-current text-[#D98C8C] opacity-50">
+                        <path d="M0 6 Q 12.5 0, 25 6 T 50 6 T 75 6 T 100 6" stroke-width="2" fill="none" />
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <!-- オンラインストア & オーダーメイド -->
+        <section id="store" class="py-20 bg-botanical-pattern">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-10">
+                    <!-- 既製品 -->
+                    <div class="fade-in">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative h-80">
+                                <img src="Gemini_Generated_Image_j71q01j71q01j71q.png" alt="既製のフラダンス衣装" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            </div>
+                            <div class="p-8 text-center">
+                                <h3 class="font-display text-3xl mb-2">Ready-to-Wear</h3>
+                                <p class="text-gray-500 mb-6">すぐに着られる、こだわりの既製衣装</p>
+                                <a href="#" class="inline-block bg-[#5C6B5C] text-white font-bold py-3 px-10 rounded-full hover:bg-[#4a594a] transition-all">コレクションを見る</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- オーダーメイド -->
+                    <div id="ordermade" class="fade-in">
+                        <div class="bg-white rounded-lg shadow-lg overflow-hidden group">
+                            <div class="relative h-80">
+                                <img src="Gemini_Generated_Image_7wot6s7wot6s7wot.png" alt="オーダーメイドの生地" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+                            </div>
+                            <div class="p-8 text-center">
+                                <h3 class="font-display text-3xl mb-2">Order Made</h3>
+                                <p class="text-gray-500 mb-6">あなたの想いを形にする、オーダーメイド</p>
+                                <a href="#" class="inline-block bg-[#5C6B5C] text-white font-bold py-3 px-10 rounded-full hover:bg-[#4a594a] transition-all">オーダーについて</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 教室について -->
+        <section id="school" class="py-20 bg-[#EAE0D5] relative overflow-hidden">
+             <!-- 背景の装飾イラスト -->
+            <div class="absolute -bottom-24 -right-24 opacity-20 transform scale-x-[-1]">
+                 <svg width="400" height="400" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="%235C6B5C" d="M62.1,-37.9C72.9,-20.4,78.9,-1.1,74.5,16.2C70.1,33.5,55.3,48.8,38.2,56.7C21.1,64.6,1.7,65.1,-17.7,60.5C-37.1,55.9,-56.5,46.2,-66.2,29.9C-75.9,13.6,-75.8,-9.2,-67.2,-27.5C-58.6,-45.8,-41.4,-59.6,-23.5,-65.1C-5.6,-70.6,13,-67.8,29.1,-60.9C45.2,-54,51.3,-43.9,62.1,-37.9Z" transform="translate(100 100)" />
+                </svg>
+            </div>
+            <div class="container mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row items-center gap-10">
+                    <div class="md:w-1/2 fade-in">
+                        <h4 class="font-display text-sm uppercase tracking-widest text-[#D98C8C] mb-2">Hula School</h4>
+                        <h2 class="font-display text-4xl mb-6">Nāmea Hula o ʻEmalani</h2>
+                        <p class="leading-loose text-gray-600 mb-6">
+                            埼玉・武蔵浦和を拠点とするフラダンス教室です。主宰の土田恵美子が、伝説のクムフラ、サニー・チンの流れを汲む伝統的なフラを基礎から丁寧に指導します。「Hula is Life」をコンセプトに、アットホームな雰囲気の中で、子供から大人まで、初心者から経験者までが楽しく踊っています。
+                        </p>
+                        <a href="https://nameahula-o-emalani.jimdofree.com/" target="_blank" class="inline-block bg-[#5C6B5C] text-white font-bold py-3 px-10 rounded-full hover:bg-[#4a594a] transition-all">教室のサイトを見る</a>
+                    </div>
+                    <div class="md:w-1/2 grid grid-cols-2 gap-4 fade-in">
+                        <img src="https://images.unsplash.com/photo-1574647937644-52a78a877a56?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="フラダンスのレッスン風景1" class="rounded-lg shadow-md aspect-square object-cover">
+                        <img src="https://images.unsplash.com/photo-1599846389425-f48e3a24a648?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="フラダンスのレッスン風景2" class="rounded-lg shadow-md aspect-square object-cover mt-8">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- お知らせ -->
+        <section id="news" class="py-20 bg-[#F8F5F2]">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="font-display text-4xl mb-2 fade-in">News & Topics</h2>
+                <!-- ハイビスカスのイラスト -->
+                <div class="w-20 h-auto mx-auto mb-10 fade-in">
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="fill-current text-[#5C6B5C] opacity-30">
+                        <path d="M50,10C35,10 30,25 30,25C30,25 10,35 10,50C10,65 25,70 25,70C25,70 35,90 50,90C65,90 75,70 75,70C75,70 90,65 90,50C90,35 70,25 70,25C70,25 65,10 50,10Z M50,40C55.52,40 60,44.48 60,50C60,55.52 55.52,60 50,60C44.48,60 40,55.52 40,50C40,44.48 44.48,40 50,40Z"/>
+                        <path d="M50,30L50,15 C60,20 65,30 65,30"/>
+                        <path d="M70,30L85,30 C80,40 70,45 70,45"/>
+                        <path d="M70,70L85,70 C80,60 70,55 70,55"/>
+                        <path d="M50,70L50,85 C40,80 35,70 35,70"/>
+                        <path d="M30,70L15,70 C20,60 30,55 30,55"/>
+                        <path d="M30,30L15,30 C20,40 30,45 30,45"/>
+                    </svg>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- News Item 1 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-left fade-in hover:shadow-xl transition-shadow">
+                        <p class="text-sm text-gray-400 mb-2">2025.08.15</p>
+                        <h3 class="font-bold text-lg mb-3 hover:text-[#D98C8C] transition-colors"><a href="#">新作パウスカート入荷のお知らせ</a></h3>
+                        <p class="text-gray-600 text-sm">リバティプリントを使用した、華やかなパウスカートが5種類入荷しました。</p>
+                    </div>
+                    <!-- News Item 2 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-left fade-in hover:shadow-xl transition-shadow">
+                        <p class="text-sm text-gray-400 mb-2">2025.08.01</p>
+                        <h3 class="font-bold text-lg mb-3 hover:text-[#D98C8C] transition-colors"><a href="#">夏季休業のお知らせ</a></h3>
+                        <p class="text-gray-600 text-sm">誠に勝手ながら、8月11日から15日まで夏季休業とさせていただきます。</p>
+                    </div>
+                    <!-- News Item 3 -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm text-left fade-in hover:shadow-xl transition-shadow">
+                        <p class="text-sm text-gray-400 mb-2">2025.07.20</p>
+                        <h3 class="font-bold text-lg mb-3 hover:text-[#D98C8C] transition-colors"><a href="#">雑誌「Hula Style」に掲載されました</a></h3>
+                        <p class="text-gray-600 text-sm">当店のオーダーメイドドレスが雑誌で紹介されました。ぜひご覧ください。</p>
+                    </div>
+                </div>
+                <div class="mt-12 fade-in">
+                     <a href="#" class="inline-block text-[#5C6B5C] font-bold py-3 px-10 rounded-full border border-[#5C6B5C] hover:bg-[#5C6B5C] hover:text-white transition-all">お知らせ一覧へ</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer id="contact" class="bg-[#5C6B5C] text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-3 gap-8 text-center md:text-left">
+                <div>
+                    <h3 class="font-display text-xl font-bold mb-4">ʻEmalani Hula Designs</h3>
+                    <p class="text-sm text-gray-300">フラダンス衣装のデザイン・制作・販売<br>フラダンススクール運営</p>
+                </div>
+                <div>
+                    <h3 class="font-display text-lg font-bold mb-4">Sitemap</h3>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#store" class="text-gray-300 hover:text-white">Online Store</a></li>
+                        <li><a href="#ordermade" class="text-gray-300 hover:text-white">Order Made</a></li>
+                        <li><a href="#school" class="text-gray-300 hover:text-white">Our School</a></li>
+                        <li><a href="#news" class="text-gray-300 hover:text-white">News</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-display text-lg font-bold mb-4">Follow Us</h3>
+                    <p class="text-sm text-gray-300 mb-4">教室の最新情報はInstagramで。</p>
+                    <a href="https://www.instagram.com/nameahulaoemalani/" target="_blank" class="inline-block text-gray-300 hover:text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.802c-3.14 0-3.505.012-4.725.068-2.753.126-3.928 1.3-4.055 4.055-.055 1.22-.067 1.575-.067 4.725s.012 3.505.067 4.725c.127 2.753 1.3 3.928 4.055 4.055 1.22.055 1.575.067 4.725.067s3.505-.012 4.725-.067c2.753-.126 3.928-1.3 4.055-4.055.055-1.22.067-1.575.067-4.725s-.012-3.505-.067-4.725c-.127-2.753-1.3-3.928-4.055-4.055-1.22-.055-1.575-.067-4.725-.067zm0 4.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-600 mt-8 pt-6 text-center text-sm text-gray-400">
+                &copy; 2025 ʻEmalani Hula Designs. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // モバイルメニューのトグル
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // ヘッダーのスクロール効果
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+
+            // カルーセル
+            const carousel = document.getElementById('carousel');
+            const items = carousel.querySelectorAll('.carousel-item');
+            const dotsContainer = document.getElementById('carousel-dots');
+            let currentItem = 0;
+            const totalItems = items.length;
+
+            if (totalItems > 0) {
+                // ドットの生成
+                for (let i = 0; i < totalItems; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('w-3', 'h-3', 'rounded-full', 'transition-all', 'duration-300');
+                    dot.classList.add(i === 0 ? 'bg-white' : 'bg-white/50');
+                    dot.addEventListener('click', () => {
+                        goToItem(i);
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+                const dots = dotsContainer.querySelectorAll('button');
+
+                function updateCarousel() {
+                    items.forEach((item, index) => {
+                        item.classList.remove('active');
+                        item.style.opacity = '0';
+                        if (index === currentItem) {
+                            item.classList.add('active');
+                            setTimeout(() => item.style.opacity = '1', 50);
+                        }
+                    });
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('bg-white', index === currentItem);
+                        dot.classList.toggle('bg-white/50', index !== currentItem);
+                    });
+                }
+
+                function goToItem(index) {
+                    currentItem = index;
+                    updateCarousel();
+                }
+
+                function nextItem() {
+                    currentItem = (currentItem + 1) % totalItems;
+                    updateCarousel();
+                }
+
+                setInterval(nextItem, 5000); // 5秒ごとにスライド
+                updateCarousel();
+            }
+
+            // フェードインアニメーション
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = {
+                threshold: 0.2,
+                rootMargin: "0px 0px -50px 0px"
+            };
+            const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+
+            faders.forEach(fader => {
+                appearOnScroll.observe(fader);
+            });
+        });
+    </script>
+
+</body>
+</html>
